@@ -1,0 +1,39 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg" style="background-color:#fad02c;" >
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="" style="padding-top:1.5rem;"><i class="fas fa-car fa-lg"></i></a>
+        </li>
+        <li class="nav-item dropdown active ">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding-top:1.5rem;">
+            Cars
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="">All Cars</a></li>
+            <li><hr class="dropdown-divider"></li>
+            {% for cat in links %}
+            <li><a class="dropdown-item" href="">car name</a> </li>
+            {% endfor %}
+
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" style="padding-top:1.5rem;"><i class="fas fa-phone-alt"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" style="padding-left:33rem;" ><img src="" width="120px" height="50px" alt="logoimage"></a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search" action="" method="get">
+        {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Search" name="q" aria-label="Search">
+        <button class="btn btn-danger" type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+</nav>

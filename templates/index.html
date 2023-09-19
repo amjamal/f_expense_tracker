@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+
+
+    <body>
+        <div class="one">
+            <div class="two">
+                <h2>Menu</h1>
+                <ul>
+                    <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('expense') }}" >Add</a></li>
+                    <li><a href="{{ url_for('allexpenses') }}">View All</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    
+                </ul>
+            </div>
+            <div class="content" align="center">
+                <div class="topbar">
+                    <h2 style="display: inline-block; padding-right: 7rem;">Expense Tracker</h2>
+                    <h4 style="float: right; color: red; padding-top: 3px;"
+                    onclick="showMenu()" onmouseover="showMenu()">{{ usr }}</h4>
+                    <div id="menu" style="display: none; position: absolute; top: 50px; right: 8px;
+                     background-color: #252523; width: 5rem; height: 3rem; font-weight: bold;">
+                        <a href="{{ url_for('index') }}" style="color: rgb(212, 13, 13);">Home</a><br>
+                        <a href="{{ url_for('logout') }}" style="color: rgb(212, 13, 13);">Logout</a>
+                    </div>
+                </div><br><br>
+            </div>
+        </div>
+
+        <script>
+            function showMenu() {
+                var menu = document.getElementById("menu");
+                if (menu.style.display === "none") {
+                    menu.style.display = "block";
+                } else {
+                    menu.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+
+</html>
+

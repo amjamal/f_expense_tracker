@@ -1,0 +1,147 @@
+body {
+    background-color: #ffffff;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.logincontent{
+    margin: 0 auto;
+    height: 300px;
+    width: 400px;
+    background-color: #ffece6;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.logintop{
+    height: 60px;
+    width: 400px;
+    margin-top: 4rem;
+    padding-top: 0.8rem;
+    background-color: #370d3f;
+    color: #ffffff;
+}
+
+.textbox{
+    padding: 10px 40px;
+    background-color: #6a7322;
+    border-radius: 10px;
+}
+
+::placeholder {
+    color: #FFFFFF;
+    opacity: 1;
+    font-style: oblique;
+    font-weight: bold;
+}
+ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.btn {
+    padding: 10px 40px;
+    background-color: #169f44;
+    color: #FFFFFF;
+    font-style: oblique;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.one{
+    display: flex;
+    position: relative;
+}
+ 
+.one .two{
+     width: 200px;
+    height: 100%;
+    background: #252524;
+    padding: 3.5px 0px;
+    position: fixed;
+}
+ 
+.one .two h1{
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    font-style: oblique;
+    font-weight: bold;
+}
+         
+.one .two h2{
+    color: #d97e7e;
+    text-align: center;
+    padding-bottom: 1rem;
+    padding-top: 1.3rem;
+}
+         
+.one .two .active{
+     background: #299d4f;
+}
+ 
+.one .two ul li{
+    text-align: center;
+    padding: 15px;
+    border-bottom: 0.1px solid #d97e7e;
+    border-top: 0.1px solid #d97e7e;
+}   
+ 
+.one .two ul li a{
+    color: #ffffff;
+    display: block;
+}
+ 
+.one .two ul li a .side{
+    width: 25px;
+    text-align:center;
+}
+ 
+.one .content{
+    width: 100%;
+    margin-left: 200px;
+}
+ 
+.one .content .topbar{
+    text-align: center;
+    padding: 20px;
+    background: #252523;
+    color: #d97e7e;
+}
+         
+.one .content .contentbar{
+    margin: auto;
+}
+ 
+.one .content .contentbar h1{
+    color: #11a844;
+    text-align: center;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+td {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid black;
+}
+
+th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 2px solid black;
+}
+

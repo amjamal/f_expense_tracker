@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %} All Expenses - Home {% endblock %}
+{% block body %}
+<div>
+        <h1 style="text-align: center;">Home</h1>
+    <h2 style="text-align: center; color: red;">Welcome {{ usr }}</h2>
+    <h2 style="text-align: center; color: red;">{{ msg2 }}</h2>
+</div><br><br>
+<div style="padding-left: 20rem;">
+    <table style="width: 85%;">
+
+        <tr>
+            <th style="width: 2%;">Sl No.</th>
+            <th style="width: 20%;">Name</th>
+            <th style="width: 17%;">Amount</th>
+            <th style="width: 18%;">Payment</th>
+            <th style="width: 18%;">Category</th>
+            <th style="width: 28%;">Date</th>
+            
+        </tr>
+        {% for exp in expense_list %}
+        <tr>
+            <!-- {{loop.index}} helps in autoincrement serial numbers-->
+            <td>{{ loop.index }}</td>
+            <td>{{ exp['name'] }}</td>
+            <td>{{ exp['amount'] }}</td>
+            <td>{{ exp['payment'] }}</td>
+            <td>{{ exp['category'] }}</td>
+            <td>{{ exp['date'] }}</td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+
+
+</div>
+{% endblock %}

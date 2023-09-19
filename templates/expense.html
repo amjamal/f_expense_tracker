@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block title %} Add {% endblock %}
+    </head>
+
+    {% block body %}
+    <body>
+
+        <div style="margin-left: 17rem;">
+            <div>
+                <div>
+                    <form action="{{ url_for('expense') }}" method="POST" autocomplete="off">
+                        <div class="msg">{{ exp }}</div>
+                        <input type="text" name="billname" placeholder="Bill Name" class="textbox" id="billname" required><br><br>
+                        <input type="number"" name="amount" placeholder="Amount" class="textbox" id="billamount" required><br><br>
+                        <label for="payment">Mode of Payment:</label><br><br>
+                        <select id="payment" name="payment" required>
+                            <option value="" selected>Select</option>
+                            <option value="cash">Cash</option>
+                            <option value="upi">UPI</option>
+                            <option value="debitcard">Debit Card</option>
+                            <option value="creditcard">Credit Card</option>
+
+                        </select><br><br><br>
+                        <label for="category">Category:</label><br><br>
+                        <select id="category" name="category" required>
+                            <option value="" selected>Select</option>
+                            <option value="food">Food</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="medicine">Medicine</option>
+                            <option value="other">Other</option>
+
+
+                        </select><br><br><br>
+                        <input type="date" name="billdate" placeholder="Bill Date" class="textbox" id="billdate" required><br><br>
+                        <input type="submit" class="btn" value="Add">
+                        <input type="reset" class="btn" value="Clear"><br><br>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            function showMenu() {
+                var menu = document.getElementById("menu");
+                if (menu.style.display === "none") {
+                    menu.style.display = "block";
+                } else {
+                    menu.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+    {% endblock %}
+
+</html>
+

@@ -1,0 +1,65 @@
+<!--List all expenses-->
+
+{% extends 'base.html' %}
+
+{% block title %} All Expenses {% endblock %}
+{% block body %}
+<h1 style="text-align: center;">View all expenses here!!</h1>
+<br><br>
+<div  style="padding-left: 20rem;">
+    <div>
+        <form method="POST" action="{{ url_for('allexpenses') }}">
+            <select name="payment">
+                <!-- {% if payment_value == "" %} selected {% endif %}, this will display the selected option-->
+                <option value="" {% if payment_value == "" %} selected {% endif %} >All Payments</option>
+                <option value="creditcard" {% if payment_value == "creditcard" %} selected {% endif %} >Credit Card</option>
+                <option value="debitcard" {% if payment_value == "debitcard" %} selected {% endif %} >Debit Card</option>
+                <option value="upi" {% if payment_value == "upi" %} selected {% endif %} >UPI</option>
+                <option value="cash" {% if payment_value == "cash" %} selected {% endif %} >Cash</option>
+            </select>&nbsp;&nbsp;
+
+            <select name="category">
+                <option value="" {% if category_value == "" %} selected {% endif %} >All Category</option>
+                <option value="electronics" {% if category_value == "electronics" %} selected {% endif %} >Electronics</option>
+                <option value="food" {% if category_value == "food" %} selected {% endif %} >Food</option>
+                <option value="medicine" {% if category_value == "medicine" %} selected {% endif %} >Medicine</option>
+                <option value="clothing" {% if category_value == "clothing" %} selected {% endif %} >Clothing</option>
+                <option value="other" {% if category_value == "other" %} selected {% endif %} >Other</option>
+            </select>&nbsp;&nbsp;
+
+            <input type="submit" value="Filter">
+        </form>
+    </div>
+    <br>
+    
+    <table style="width: 85%;">
+
+        <tr>
+            <th style="width: 2%;">Sl No.</th>
+            <th style="width: 20%;">Name</th>
+            <th style="width: 17%;">Amount</th>
+            <th style="width: 18%;">Payment</th>
+            <th style="width: 18%;">Category</th>
+            <th style="width: 28%;">Date</th>
+            
+        </tr>
+        {% for exp in expense_list %}
+        <tr>
+            <!-- {{loop.index}} helps in autoincrement serial numbers-->
+            <td>{{ loop.index }}</td>
+            <td>{{ exp['name'] }}</td>
+            <td>{{ exp['amount'] }}</td>
+            <td>{{ exp['payment'] }}</td>
+            <td>{{ exp['category'] }}</td>
+            <td>{{ exp['date'] }}</td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+
+{% endblock %}
+

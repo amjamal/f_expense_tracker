@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block body %}
+<body style="background-image: url('{{url_for("static", filename="images/bg.jpg" )}}');">
+    <div class="logincontent">
+        <div class="logintop">
+            <h1>Login</h1>
+        </div><br><br>
+        <div class="loginbottom">
+            <form action="{{ url_for('login') }}" method="POST" autocomplete="off">
+                <div class="msg">{{ msg }}</div>
+                <input  type="text" name="username" placeholder="username" class="textbox" id="username" required><br><br>
+                <input type="password" name="password" placeholder="password" class="textbox" id="password" required><br><br>
+                <input type="submit" class="btn" value="Login">           
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
