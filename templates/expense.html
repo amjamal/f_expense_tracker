@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,21 +16,13 @@
                         <input type="text" name="billname" placeholder="Bill Name" class="textbox" id="billname" required><br><br>
                         <input type="number"" name="amount" placeholder="Amount" class="textbox" id="billamount" required><br><br>
                         <label for="payment">Mode of Payment:</label><br><br>
+                        <select id="payment" name="payment" required>
+                            <option value="" selected>Select</option>
+                            <option value="cash">Cash</option>
+                            <option value="upi">UPI</option>
+                            <option value="debitcard">Debit Card</option>
+                            <option value="creditcard">Credit Card</option>
 
-                        <div classs="dropdown">
-                            <div class="select">
-                                <span class="selected">Payment</span>
-                                <div class="caret"></div>
-                            </div>
-                            <ul class="menu">
-                                <li>Cash</li>
-                                <li>UPI</li>
-                                <li>Debit Card</li>
-                                <li>Credit Card</li>
-                            </ul>
-
-                        </div>
-            
                         </select><br><br><br>
                         <label for="category">Category:</label><br><br>
                         <select id="category" name="category" required>
@@ -68,4 +59,3 @@
     {% endblock %}
 
 </html>
-
