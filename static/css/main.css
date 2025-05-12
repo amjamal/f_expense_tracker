@@ -145,3 +145,13 @@ th {
     border: 2px solid black;
 }
 
+
+.dropdown {
+    min-width: 15em;
+    position: relative;
+    margin: 2em;
+}
+
+.dropdown * {
+    box-sizing: border-box;
+}
